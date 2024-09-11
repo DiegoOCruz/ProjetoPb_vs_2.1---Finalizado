@@ -2,20 +2,22 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signOut  } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAuqWOvBBz-2fEYFlb16oDNyVEdZCn3EIs",
-  authDomain: "sistema-de-compras-95ebc.firebaseapp.com",
-  projectId: "sistema-de-compras-95ebc",
-  storageBucket: "sistema-de-compras-95ebc.appspot.com",
-  messagingSenderId: "766541000253",
-  appId: "1:766541000253:web:f9bcf407c14773aa61c454"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
